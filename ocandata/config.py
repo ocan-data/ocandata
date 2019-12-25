@@ -16,6 +16,3 @@ env.read_env()
 
 CACHE_DIR = env('cache_dir', '.')
 DOTPATH = env('DOTPATH', 'canadadata')
-
-
-

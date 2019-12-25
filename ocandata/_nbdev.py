@@ -63,6 +63,7 @@ modules = ["config.py",
            "inventory.py",
            "repo.py",
            "statscan.py",
+           "text.py",
            "datasets.py",
            "datatools.py"]
 

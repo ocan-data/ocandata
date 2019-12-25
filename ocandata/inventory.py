@@ -11,17 +11,18 @@ import ipywidgets as widgets
 import pandas as pd
 from jinja2 import Template
 from bs4 import BeautifulSoup
-from .text import get_language
-from .core import get
+from .text import get_language, Bm25Index
+from .core import get, parallel
 from typing import List
-from .text import Bm25Index
-from .core import parallel
 import re
 import os
 
+# Cell
+
 _INVENTORY_URL = 'https://open.canada.ca/data/dataset/4ed351cf-95d8-4c10-97ac-6b3511f359b7/resource/d0df95a8-31a9-46c9-853b-6952819ec7b4/download/inventory.csv'
 
-_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+if not '_DATA_DIR' in globals():
+    _DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 _EXPIRED_DATASETS = os.path.join(_DATA_DIR, 'ExpiredDatasets.txt')
 
 

@@ -4,7 +4,6 @@ __all__ = ['get_language', 'stem', 'preprocess', 'stemmer', 'Bm25Index']
 
 # Cell
 
-import pandas as pd
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
 from rank_bm25 import BM25Okapi
@@ -17,7 +16,6 @@ def get_language(language: str):
         language = language.lower()
         if language == 'french' or language == 'fr' or language.startswith('fran'):
             return 'French'
-
 
 def stem(string: str):
     return stemmer.stem(string)

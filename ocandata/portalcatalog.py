@@ -72,6 +72,9 @@ class Dataset:
 
 class Resource:
 
+    """
+    A resource. Belongs to a dataset, which will have 1 or more resources
+    """
     def __init__(self, record, language:str = 'en'):
         self.record = record
         self.id = record.get('id')

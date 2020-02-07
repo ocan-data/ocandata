@@ -56,14 +56,7 @@ index = {"FORMAT": "00_config.ipynb",
          "list_contains": "07_statscan.ipynb",
          "CONTROL_COLS": "07_statscan.ipynb",
          "STATSCAN_TYPES": "07_statscan.ipynb",
-         "statscan_zipurl_re": "07_statscan.ipynb",
-         "read_gz": "08_portalcatalog.ipynb",
-         "get_jsonlines": "08_portalcatalog.ipynb",
-         "get_value_for_language": "08_portalcatalog.ipynb",
-         "get_datasets": "08_portalcatalog.ipynb",
-         "CatalogDataset": "08_portalcatalog.ipynb",
-         "CatalogResource": "08_portalcatalog.ipynb",
-         "PortalCatalog": "08_portalcatalog.ipynb"}
+         "statscan_zipurl_re": "07_statscan.ipynb"}
 
 modules = ["config.py",
            "core.py",
@@ -72,8 +65,7 @@ modules = ["config.py",
            "repo.py",
            "datatools.py",
            "datasets.py",
-           "statscan.py",
-           "portalcatalog.py"]
+           "statscan.py"]
 
 git_url = "https://github.com/dgunning/ocandata/tree/master/"
 

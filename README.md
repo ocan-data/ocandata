@@ -1,4 +1,4 @@
-# nbdev template
+# ocandata
 
-Use this template to more easily create your nbdev project.
+Tools for working with Open Canada Data
 

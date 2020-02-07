@@ -29,6 +29,9 @@ def get_datasets(jsonl_content: str):
 
 class Dataset:
 
+    """
+    A dataset
+    """
     def __init__(self, record=None, language:str = 'en'):
         self.record = record
         self.resources = [Resource(record, language) for record in record['resources']]

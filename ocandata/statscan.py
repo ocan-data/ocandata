@@ -82,6 +82,10 @@ _STATSCAN_DATASET_RE = re.compile("(\d+)(\-(eng|fra))?\.(\w+)+")
 
 
 class StatscanUrl:
+
+    """
+    Represents a url to the statscan data
+    """
     def __init__(
         self,
         baseurl: str,

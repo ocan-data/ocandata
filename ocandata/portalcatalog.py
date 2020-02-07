@@ -9,30 +9,35 @@ import json
 import pandas as pd
 from functools import partial
 
+
 # Cell
 
-def read_gz(url:str):
+def read_gz(url: str):
     response = urllib.request.urlopen(url)
     decompressed_bytes = gzip.decompress(response.read())
     text = decompressed_bytes.decode('utf-8')
     return text
 
+
 def get_jsonlines(jsonl_content: str):
     return [json.loads(jline) for jline in jsonl_content.split('\n') if jline]
+
 
 # Cell
 def get_value_for_language(lang: str, value_dict: dict):
     return value_dict.get(lang, None)
 
+
 def get_datasets(jsonl_content: str):
     return [Dataset(json.loads(jline)) for jline in jsonl_content.split('\n') if jline]
 
-class Dataset:
 
+class Dataset:
     """
     A dataset
     """
-    def __init__(self, record=None, language:str = 'en'):
+
+    def __init__(self, record=None, language: str = 'en'):
         self.record = record
         self.resources = [Resource(record, language) for record in record['resources']]
         self.language = language
@@ -52,15 +57,14 @@ class Dataset:
             return self.get_data_series_name(self.language)
         return f'{self.get_org()} Dataset'
 
-    def get_notes(self, language:str = None):
+    def get_notes(self, language: str = None):
         language = language or self.language
         return self.get_notes_translated(lang=language)
 
     def resources_as_html(self):
-        df= pd.DataFrame([{'name': resource.get_name(), 'state': resource.get_state()}
-                          for resource in self.resources])
+        df = pd.DataFrame([{'name': resource.get_name(), 'state': resource.get_state()}
+                           for resource in self.resources])
         return df.to_html(index=False)
-
 
     def __repr__(self):
         return f'Dataset {self.get_name()}'
@@ -73,12 +77,13 @@ class Dataset:
         html += self.resources_as_html()
         return html
 
-class Resource:
 
+class Resource:
     """
     A resource. Belongs to a dataset, which will have 1 or more resources
     """
-    def __init__(self, record, language:str = 'en'):
+
+    def __init__(self, record, language: str = 'en'):
         self.record = record
         self.id = record.get('id')
         self.language = language
@@ -101,10 +106,10 @@ class Resource:
 
 
 class PortalCatalog:
-
     """
     A portal catalog
     """
+
     def __init__(self, jsonl_content: str):
         self.datasets = get_datasets(jsonl_content)
 

@@ -67,7 +67,8 @@ modules = ["config.py",
            "datasets.py",
            "statscan.py"]
 
-git_url = "https://github.com/dgunning/ocandata/tree/master/"
+doc_url = "https://dgunning.github.io/ocandata/"
 
+git_url = "https://github.com/dgunning/ocandata/tree/master/"
 
 def custom_doc_links(name): return None

@@ -20,8 +20,8 @@ index = {"FORMAT": "00_config.ipynb",
          "Bm25Index": "02_text.ipynb",
          "Inventory": "06_datasets.ipynb",
          "DataFrameHolder": "03_inventory.ipynb",
-         "Resource": "03_inventory.ipynb",
-         "Dataset": "04_repo.ipynb",
+         "Resource": "08_portalcatalog.ipynb",
+         "Dataset": "08_portalcatalog.ipynb",
          "get_tables": "03_inventory.ipynb",
          "get_deleted_message": "03_inventory.ipynb",
          "load_dataset_resources": "03_inventory.ipynb",
@@ -56,7 +56,12 @@ index = {"FORMAT": "00_config.ipynb",
          "list_contains": "07_statscan.ipynb",
          "CONTROL_COLS": "07_statscan.ipynb",
          "STATSCAN_TYPES": "07_statscan.ipynb",
-         "statscan_zipurl_re": "07_statscan.ipynb"}
+         "statscan_zipurl_re": "07_statscan.ipynb",
+         "read_gz": "08_portalcatalog.ipynb",
+         "get_jsonlines": "08_portalcatalog.ipynb",
+         "get_value_for_language": "08_portalcatalog.ipynb",
+         "get_datasets": "08_portalcatalog.ipynb",
+         "PortalCatalog": "08_portalcatalog.ipynb"}
 
 modules = ["config.py",
            "core.py",
@@ -65,7 +70,8 @@ modules = ["config.py",
            "repo.py",
            "datatools.py",
            "datasets.py",
-           "statscan.py"]
+           "statscan.py",
+           "portalcatalog.py"]
 
 doc_url = "https://dgunning.github.io/ocandata/"
 
